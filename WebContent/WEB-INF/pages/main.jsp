@@ -11,7 +11,8 @@
 		<div class="main_container">
 			<div id="main_header">
 				<ul>
-					<li><a href="#" onclick="testwebsocketpush();">Click To Test</a></li>
+					<li><a href="#" onclick="testwebsocketpush();">Click To Test Normal</a></li>
+					<li><a href="#" onclick="testwebsocketpushAsync();">Click To Test Async</a></li>
 				</ul>
 			</div>
 			<div class="main_content" id="main_content">
@@ -66,6 +67,13 @@ function testwebsocketpush(){
 	if (webSocket == null) {connect();};
 	$('div#main_content').empty();
 	$("div#main_content").load('${pageContext.request.contextPath}/testwebsocketpush');
+	//disconnect();
+}
+
+function testwebsocketpushAsync(){
+	if (webSocket == null) {connect();};
+	$('div#main_content').empty();
+	$("div#main_content").load('${pageContext.request.contextPath}/testwebsocketpushasync');
 	//disconnect();
 }
 
